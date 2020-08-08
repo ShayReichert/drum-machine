@@ -1,0 +1,262 @@
+//BODY//
+// * {
+//     outline: 1px red solid;
+// }
+body {
+    margin: 0;
+    padding: 0;
+    outline: 1px red solid;
+    height: 100vh;
+    font-family: "Share Tech Mono", monospace;
+    /* #root {
+    box-sizing: border-box;
+    outline: 2px solid orange;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+} */
+
+    .App {
+        margin: 0;
+        padding: 0;
+        outline: 1px red solid;
+        height: 100vh;
+        background: #ff000052;
+        display: flex;
+    }
+}
+
+//// DRUM MACHINE ////
+#drum-machine {
+    position: absolute;
+    top: 50%;
+    left: 50%; /* à 50%/50% du parent référent */
+    transform: translate(-50%, -50%);
+    background: #b6b1ad;
+    margin: auto;
+    width: 875px;
+    height: 649px;
+    box-shadow: 6px 6px 6px #00000029;
+    border-radius: 7px;
+    border: 1px solid #707070;
+}
+
+///// ROW 1 /////
+.row1 {
+    display: flex;
+}
+
+//// DISPLAY ////
+#display {
+    position: relative;
+    top: 45px;
+    left: 104px;
+    width: 298px;
+    height: 103px;
+    background-color: #0a0a0a;
+    border: 1px solid #707070;
+    border-radius: 5px;
+    display: table;
+    #display-inside {
+        margin: auto;
+        margin-top: 22px;
+        background-color: #313922;
+        width: 233px;
+        height: 58px;
+        border: 1px solid #707070;
+        border-radius: 2px;
+    }
+    p {
+        color: rgb(182, 182, 182);
+        text-align: center;
+        margin-top: 17px;
+        font-size: 20px;
+    }
+}
+
+//// NAME MACHINE ////
+#titre-machine {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 134px;
+    left: 260px;
+
+    h1 {
+        font-size: 45px;
+        margin: 0;
+    }
+    .red-line {
+        width: 226px;
+        height: 7px;
+        background-color: #a60b08;
+        border: 1px solid #707070;
+    }
+    h2 {
+        font-size: 25px;
+        margin-top: 5px;
+    }
+}
+
+///// ROW 2 /////
+.row2 {
+    display: flex;
+    position: relative;
+    top: 130px;
+}
+
+#main-button-main-volume {
+    position: relative;
+    top: 180px;
+    left: 305px;
+    width: 64px;
+    height: 200px;
+    background: #6d7170;
+    border-radius: 3px;
+    #main-volume {
+        border: 1px solid #6d7170;
+        height: 180px;
+        margin-top: 8px;
+    }
+}
+
+
+
+
+
+//// CUSTOM INPUT RANGE ////
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 250%;
+    margin-top: 90px;
+    transform: rotate(270deg) translateY(-48px);
+
+}
+input[type="range"]:focus {
+    outline: none;
+}
+//intérieur
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    // box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    box-shadow: inset 0px 0px 4px 1px #313922;
+    background: #313922;
+    border-radius: 1.3px;
+    border: 0.2px solid #010101;
+}
+//cursor white
+input[type="range"]::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #BBB5A7;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -14px;
+}
+
+
+
+
+
+
+//// PAD BANK ////
+#main-pad-bank {
+    position: relative;
+    top: 180px;
+    left: 325px;
+    width: 64px;
+    height: 200px;
+    background: #6d7170;
+    border-radius: 3px;
+
+    #indicators {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 15px 0 25px 0;
+        font-size: 12px;
+        #a-indicator {
+            display: flex;
+            #a-light {
+                background-color: red;
+                margin-left: 4px;
+            }
+        }
+        #b-incator {
+            display: flex;
+            #b-light {
+                background-color: grey;
+                margin-right: 4px;
+            }
+        }
+    }
+    .light-indicator {
+        border-radius: 50px;
+        width: 5px;
+        height: 5px;
+        margin-top: 4px;
+    }
+    .bank-b {
+        background-color: #00ff00 !important;
+    }
+    .bank-a {
+        background-color: grey !important;
+    }
+    #main-button-pad-bank {
+        font-size: 12px;
+        text-align: center;
+        #button-pad {
+            margin: auto;
+            width: 35px;
+            height: 15px;
+            background: #bbb5a7;
+            box-shadow: 2px 2px 1px #00000071;
+            border-radius: 3px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+    }
+}
+
+//// MAIN PAD ////
+.main-pad {
+    position: relative;
+    left: 340px;
+    width: 387px;
+    height: 394px;
+    border: 1px solid #707070;
+    border-radius: 5px;
+    background: #74787b;
+    #pad-container {
+        margin: auto;
+        margin-top: 39px;
+        width: 270px;
+        height: 317px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        // border: 1px solid red;
+    }
+    .drum-pad {
+        width: 68px;
+        height: 68px;
+        background: #6d7170;
+        border-radius: 3px;
+        box-shadow: 2px 2px 1px #00000071;
+        color: #9a9a9a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 50px;
+        cursor: pointer;
+    }
+}
+
+// Centré les caractères dans les pade et les mettre en gros et en blanc.
