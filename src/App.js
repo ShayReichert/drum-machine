@@ -367,7 +367,6 @@ class App extends Component {
   componentDidMount() {
     document.addEventListener("keydown", this.keyPressed, false)
   }
-
   componentWillUnmount() {
     document.removeEventListener("keydown", this.keyPressed, false)
   }
@@ -378,7 +377,6 @@ class App extends Component {
     bankLightA.classList.toggle('bank-a');
     bankLightB.classList.toggle('bank-b');
   }
-
   changeVolume = () => {
     const barProgress = document.getElementById('volume-control');
     this.setState({
@@ -393,8 +391,6 @@ class App extends Component {
 
 
   render() {
-
-
 
     return (
       <div className="App">
