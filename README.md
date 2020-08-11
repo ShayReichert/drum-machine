@@ -1,8 +1,8 @@
-# Drum Machine 2020 (AKAÏ 2000 MPC like)
+# Drum Machine 2020 (Akaï 2000 MPC like)
 ## Make some vintage beats easily.
 
 ***Click on this image to access :***
-[![DrumMachine](#)](https://shayreichert.github.io/drum-machine/)
+[![DrumMachine](https://github.com/ShayReichert/drum-machine/blob/master/screen_drum.png)](https://shayreichert.github.io/drum-machine/)
 
 
 ## Description
@@ -17,15 +17,17 @@
 
 ## Built With
 
-* [React](https://fr.reactjs.org/) - JavaScript Framework
+* [React](https://fr.reactjs.org/) - JavaScript Librairie
 
 ---
 
 
 ## What you'll learn by making this app
+- Make a complex CSS visual with Sass
 - Link keys to sounds
 - Make a custom input range (volume control)
 - Display infos on click
+- Manage a large amount of data
 
 ---
 ---
