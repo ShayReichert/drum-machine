@@ -1,368 +1,115 @@
 import React, { Component } from 'react';
 import './App.scss';
-import apple from "./all-the-sounds/apple.mp3";
-import shortCircuit from "./all-the-sounds/shortCircuit.mp3";
-import waterBalloon from "./all-the-sounds/waterBalloon.mp3";
-import fireBow from "./all-the-sounds/fireBow.mp3";
-import lightSwith from "./all-the-sounds/lightSwith.mp3";
-import marbles from "./all-the-sounds/marbles.mp3";
-import neckSnap from "./all-the-sounds/neckSnap.mp3";
-import pinDropping from "./all-the-sounds/pinDropping.mp3";
-import stringTension from "./all-the-sounds/stringTension.mp3";
-import boneBreaking from "./all-the-sounds/bankb/BoneBreaking.mp3";
-import aMajor from './all-the-sounds/bankb/808AMajor.mp3';
-import dminor from './all-the-sounds/bankb/808Dminor.mp3';
-import fsound from './all-the-sounds/bankb/808F.mp3';
-import dmajor from './all-the-sounds/bankb/8080Dmajor.mp3';
-import charley from './all-the-sounds/bankb/charley01.mp3';
-import charleyOpen from './all-the-sounds/bankb/charleyOpen01.mp3';
-import kick from './all-the-sounds/bankb/kick01.mp3';
-import snare from './all-the-sounds/bankb/snare01.mp3';
+
+
+// kick 2 : https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Kicks/152[kb]bigcheeks-kick.wav.mp3
+// Snare 2 : https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Snares/51[kb]ec-sn016.wav.mp3
+// Clap 2 : https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Claps/86[kb]cleap-real-2-verb2cleap-real.wav.mp3 
+// Hit Hat 2 : https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/23[kb]chh808.aif.mp3
+// Clic 2 : https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Tabla/24[kb]ti-ri.aif.mp3
+// Melodic 2 A : https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/299[kb]one-gentle-epiano-hit.wav.mp3
+// Melodic 2 B : https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/356[kb]one-staggered-epiano-chord-2.wav.mp3
+// Melodic 2 C : https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/274[kb]one-staggered-epiano-chord.wav.mp3 
+// TrumpThatTrue : https://sampleswap.org/samples-ghost/VOCALS%20and%20SPOKEN%20WORD/Donald%20Trump%20Construction%20Kit/252[kb]trump-thats-true.wav.mp3 
+
+const bankA = [
+  {
+    keyCode: 81,
+    key: "Q",
+    id: "Kick",
+    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Kicks/53[kb]ec-kik007.wav.mp3"
+  },
+  {
+    keyCode: 87,
+    key: "W",
+    id: "Snare",
+    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Snares/61[kb]ec-sn022.wav.mp3"
+  },
+  {
+    keyCode: 69,
+    key: "E",
+    id: "Clap",
+    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Claps/102[kb]c5.aif.mp3"
+  },
+  {
+    keyCode: 65,
+    key: "A",
+    id: "Hit Hat",
+    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/9[kb]ec-hat024.wav.mp3"
+  },
+  {
+    keyCode: 83,
+    key: "S",
+    id: "Clic",
+    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Tabla/24[kb]ti-ri.aif.mp3"
+  },
+  {
+    keyCode: 68,
+    key: "D",
+    id: "Melodic01",
+    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/1166[kb]stab-satisfying-4.wav.mp3"
+  },
+  {
+    keyCode: 90,
+    key: "Z",
+    id: "Melodic02",
+    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/1166[kb]stab-satisfying-12.wav.mp3"
+  },
+  {
+    keyCode: 88,
+    key: "X",
+    id: "Melodic03",
+    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/1166[kb]stab-satisfying-1.wav.mp3"
+  },
+  {
+    keyCode: 67,
+    key: "C",
+    id: "Melodic04",
+    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/1166[kb]stab-satisfying-10.wav.mp3"
+  }
+]
+
+
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.sounds = {
-      Apple: new Audio(apple),
-      ShortCircuit: new Audio(shortCircuit),
-      WaterBalloon: new Audio(waterBalloon),
-      FireBow: new Audio(fireBow),
-      LightSwith: new Audio(lightSwith),
-      Marbles: new Audio(marbles),
-      NeckSnap: new Audio(neckSnap),
-      PinDropping: new Audio(pinDropping),
-      StringTension: new Audio(stringTension),
 
-      BoneBreaking: new Audio(boneBreaking),
-      AMajor: new Audio(aMajor),
-      Dminor: new Audio(dminor),
-      Fsound: new Audio(fsound),
-      Dmajor: new Audio(dmajor),
-      Charley: new Audio(charley),
-      CharleyOpen: new Audio(charleyOpen),
-      Kick: new Audio(kick),
-      Snare: new Audio(snare),
-
-    };
     this.state = {
-      Apple: "Apple Sound",
-      ShortCircuit: "Short Circuit",
-      WaterBalloon: "Water Balloon",
-      FireBow: "Fire Bow",
-      LightSwith: "Light Swith",
-      Marbles: "Marbles",
-      NeckSnap: "Neck Snap",
-      PinDropping: "Pin Dropping",
-      StringTension: "String",
-
-      BoneBreaking: "Bone Breaking",
-      AMajor: "808 A Major",
-      Dminor: "808 D minor",
-      Fsound: "808 F",
-      Dmajor: "808 D Major",
-      Charley: "Hit Hat",
-      CharleyOpen: "Open Hit Hat",
-      Kick: "Kick",
-      Snare: "Snare",
-      default: "",
-
+      sound: {},
+      id: '',
       volumeValue: "50"
     };
   }
 
-  // OnClick, play sound
-  playSound = (e) => {
-    const bankLightB = document.getElementById('b-light');
-    // Bank b activated
-    if (bankLightB.classList.contains('bank-b')) {
-      switch (e.currentTarget.childNodes[1].id) {
-        case "Qb":
-          const BoneBreaking = document.getElementById('Qb');
-          this.setState({ default: this.state.BoneBreaking });
-          BoneBreaking.volume = this.state.volumeValue / 100;
-          BoneBreaking.currentTime = 0;
-          BoneBreaking.play();
-          break;
-        case "Wb":
-          const AMajor = document.getElementById('Wb');
-          this.setState({ default: this.state.AMajor });
-          AMajor.volume = this.state.volumeValue / 100;
-          AMajor.currentTime = 0;
-          AMajor.play();
-          break;
-        case "Eb":
-          const Dminor = document.getElementById('Eb');
-          this.setState({ default: this.state.Dminor });
-          Dminor.volume = this.state.volumeValue / 100;
-          Dminor.currentTime = 0;
-          Dminor.play();
-          break;
-        case "Ab":
-          const Fsound = document.getElementById('Ab');
-          this.setState({ default: this.state.Fsound });
-          Fsound.volume = this.state.volumeValue / 100;
-          Fsound.currentTime = 0;
-          Fsound.play();
-          break;
-        case "Sb":
-          const Dmajor = document.getElementById('Sb');
-          this.setState({ default: this.state.Dmajor });
-          Dmajor.volume = this.state.volumeValue / 100;
-          Dmajor.currentTime = 0;
-          Dmajor.play();
-          break;
-        case "Db":
-          const Charley = document.getElementById('Db');
-          this.setState({ default: this.state.Charley });
-          Charley.volume = this.state.volumeValue / 100;
-          Charley.currentTime = 0;
-          Charley.play();
-          break;
-        case "Zb":
-          const CharleyOpen = document.getElementById('Zb');
-          this.setState({ default: this.state.CharleyOpen });
-          CharleyOpen.volume = this.state.volumeValue / 100;
-          CharleyOpen.currentTime = 0;
-          CharleyOpen.play();
-          break;
-        case "Xb":
-          const Kick = document.getElementById('Xb');
-          this.setState({ default: this.state.Kick });
-          Kick.volume = this.state.volumeValue / 100;
-          Kick.currentTime = 0;
-          Kick.play();
-          break;
-        case "Cb":
-          const Snare = document.getElementById('Cb');
-          this.setState({ default: this.state.Snare });
-          Snare.volume = this.state.volumeValue / 100;
-          Snare.currentTime = 0;
-          Snare.play();
-          break;
-        default:
-          console.log("oops, there is a problem on clicked buttons (bank-b)");
-      }
-      // Bank a activated
-    } else {
-      switch (e.currentTarget.childNodes[0].id) {
-        case ("Q"):
-          const Apple = document.getElementById('Q');
-          this.setState({ default: this.state.Apple });
-          Apple.volume = this.state.volumeValue / 100;
-          Apple.currentTime = 0;
-          Apple.play();
-          break;
-        case ("W"):
-          const ShortCircuit = document.getElementById('W');
-          this.setState({ default: this.state.ShortCircuit });
-          ShortCircuit.volume = this.state.volumeValue / 100;
-          ShortCircuit.currentTime = 0;
-          ShortCircuit.play();
-          break;
-        case "E":
-          const WaterBalloon = document.getElementById('E');
-          this.setState({ default: this.state.WaterBalloon });
-          WaterBalloon.volume = this.state.volumeValue / 100;
-          WaterBalloon.currentTime = 0;
-          WaterBalloon.play();
-          break;
-        case "A":
-          const FireBow = document.getElementById('A');
-          this.setState({ default: this.state.FireBow });
-          FireBow.volume = this.state.volumeValue / 100;
-          FireBow.currentTime = 0;
-          FireBow.play();
-          break;
-        case "S":
-          const LightSwith = document.getElementById('S');
-          this.setState({ default: this.state.LightSwith });
-          LightSwith.volume = this.state.volumeValue / 100;
-          LightSwith.currentTime = 0;
-          LightSwith.play();
-          break;
-        case "D":
-          const Marbles = document.getElementById('D');
-          this.setState({ default: this.state.Marbles });
-          Marbles.volume = this.state.volumeValue / 100;
-          Marbles.currentTime = 0;
-          Marbles.play();
-          break;
-        case "Z":
-          const NeckSnap = document.getElementById('Z');
-          this.setState({ default: this.state.NeckSnap });
-          NeckSnap.volume = this.state.volumeValue / 100;
-          NeckSnap.currentTime = 0;
-          NeckSnap.play();
-          break;
-        case "X":
-          const PinDropping = document.getElementById('X');
-          this.setState({ default: this.state.PinDropping });
-          PinDropping.volume = this.state.volumeValue / 100;
-          PinDropping.currentTime = 0;
-          PinDropping.play();
-          break;
-        case "C":
-          const StringTension = document.getElementById('C');
-          this.setState({ default: this.state.StringTension });
-          StringTension.volume = this.state.volumeValue / 100;
-          StringTension.currentTime = 0;
-          StringTension.play();
-          break;
-        default:
-          console.log("oops, there is a problem on clicked buttons (bank-a)");
-      }
-    }
+  // poubelle, trucs à récupérer peut-être ? 
+  // const bankLightB = document.getElementByid('b-light');
+  // if (bankLightB.classList.contains('bank-b')
+  // switch (e.currentTarget.childNodes[1].id) 
+
+  playSound = (soundKey) => {
+    console.log(soundKey);
+    const sound = document.getElementById(soundKey);
+    sound.currentTime = 0;
+    sound.play();
+
   }
 
+  handleClick = index => {
+    // console.log(this, bankA[index]);
+    this.setState({
+      ...this.state,
+      sound: bankA[index],
+      id: bankA[index].id
+    });
+    let soundKey = bankA[index].key;
+    this.playSound(soundKey);
+  };
+
   // OnKeyDown, play sound
-  keyPressed = (e) => {
-    const bankLightB = document.getElementById('b-light');
-    // Bank b activated
-    if (bankLightB.classList.contains('bank-b')) {
-      switch (e.code) {
-        case "KeyQ":
-          const BoneBreaking = document.getElementById('Qb');
-          this.setState({ default: this.state.BoneBreaking });
-          BoneBreaking.volume = this.state.volumeValue / 100;
-          BoneBreaking.currentTime = 0;
-          BoneBreaking.play();
-          break;
-        case "KeyW":
-          const AMajor = document.getElementById('Wb');
-          this.setState({ default: this.state.AMajor });
-          AMajor.volume = this.state.volumeValue / 100;
-          AMajor.currentTime = 0;
-          AMajor.play();
-          break;
-        case "KeyE":
-          const Dminor = document.getElementById('Eb');
-          this.setState({ default: this.state.Dminor });
-          Dminor.volume = this.state.volumeValue / 100;
-          Dminor.currentTime = 0;
-          Dminor.play();
-          break;
-        case "KeyA":
-          const Fsound = document.getElementById('Ab');
-          this.setState({ default: this.state.Fsound });
-          Fsound.volume = this.state.volumeValue / 100;
-          Fsound.currentTime = 0;
-          Fsound.play();
-          break;
-        case "KeyS":
-          const Dmajor = document.getElementById('Sb');
-          this.setState({ default: this.state.Dmajor });
-          Dmajor.volume = this.state.volumeValue / 100;
-          Dmajor.currentTime = 0;
-          Dmajor.play();
-          break;
-        case "KeyD":
-          const Charley = document.getElementById('Db');
-          this.setState({ default: this.state.Charley });
-          Charley.volume = this.state.volumeValue / 100;
-          Charley.currentTime = 0;
-          Charley.play();
-          break;
-        case "KeyZ":
-          const CharleyOpen = document.getElementById('Zb');
-          this.setState({ default: this.state.CharleyOpen });
-          CharleyOpen.volume = this.state.volumeValue / 100;
-          CharleyOpen.currentTime = 0;
-          CharleyOpen.play();
-          break;
-        case "KeyX":
-          const Kick = document.getElementById('Xb');
-          this.setState({ default: this.state.Kick });
-          Kick.volume = this.state.volumeValue / 100;
-          Kick.currentTime = 0;
-          Kick.play();
-          break;
-        case "KeyC":
-          const Snare = document.getElementById('Cb');
-          this.setState({ default: this.state.Snare });
-          Snare.volume = this.state.volumeValue / 100;
-          Snare.currentTime = 0;
-          Snare.play();
-          break;
-        case "MetaLeft":
-          this.changeBank();
-          break;
-        default:
-          console.log("oops, there is a problem on keys pressed");
-      }
-      // Bank a activated
-    } else {
-      switch (e.code) {
-        case "KeyQ":
-          const Apple = document.getElementById('Q');
-          this.setState({ default: this.state.Apple });
-          Apple.volume = this.state.volumeValue / 100;
-          Apple.currentTime = 0;
-          Apple.play();
-          break;
-        case "KeyW":
-          const ShortCircuit = document.getElementById('W');
-          this.setState({ default: this.state.ShortCircuit });
-          ShortCircuit.volume = this.state.volumeValue / 100;
-          ShortCircuit.currentTime = 0;
-          ShortCircuit.play();
-          break;
-        case "KeyE":
-          const WaterBalloon = document.getElementById('E');
-          this.setState({ default: this.state.WaterBalloon });
-          WaterBalloon.volume = this.state.volumeValue / 100;
-          WaterBalloon.currentTime = 0;
-          WaterBalloon.play();
-          break;
-        case "KeyA":
-          const FireBow = document.getElementById('A');
-          this.setState({ default: this.state.FireBow });
-          FireBow.volume = this.state.volumeValue / 100;
-          FireBow.currentTime = 0;
-          FireBow.play();
-          break;
-        case "KeyS":
-          const LightSwith = document.getElementById('S');
-          this.setState({ default: this.state.LightSwith });
-          LightSwith.volume = this.state.volumeValue / 100;
-          LightSwith.currentTime = 0;
-          LightSwith.play();
-          break;
-        case "KeyD":
-          const Marbles = document.getElementById('D');
-          this.setState({ default: this.state.Marbles });
-          Marbles.volume = this.state.volumeValue / 100;
-          Marbles.currentTime = 0;
-          Marbles.play();
-          break;
-        case "KeyZ":
-          const NeckSnap = document.getElementById('Z');
-          this.setState({ default: this.state.NeckSnap });
-          NeckSnap.volume = this.state.volumeValue / 100;
-          NeckSnap.currentTime = 0;
-          NeckSnap.play();
-          break;
-        case "KeyX":
-          const PinDropping = document.getElementById('X');
-          this.setState({ default: this.state.PinDropping });
-          PinDropping.volume = this.state.volumeValue / 100;
-          PinDropping.currentTime = 0;
-          PinDropping.play();
-          break;
-        case "KeyC":
-          const StringTension = document.getElementById('C');
-          this.setState({ default: this.state.StringTension });
-          StringTension.volume = this.state.volumeValue / 100;
-          StringTension.currentTime = 0;
-          StringTension.play();
-          break;
-        case "MetaLeft":
-          this.changeBank();
-          break;
-        default:
-          console.log("oops, there is a problem on keys pressed");
-      }
-    }
-  }
+  // keyPressed = (e) => {
+
+  // }
 
   componentDidMount() {
     document.addEventListener("keydown", this.keyPressed, false)
@@ -372,13 +119,13 @@ class App extends Component {
   }
 
   changeBank = () => {
-    const bankLightA = document.getElementById('a-light');
-    const bankLightB = document.getElementById('b-light');
+    const bankLightA = document.getElementByid('a-light');
+    const bankLightB = document.getElementByid('b-light');
     bankLightA.classList.toggle('bank-a');
     bankLightB.classList.toggle('bank-b');
   }
   changeVolume = () => {
-    const barProgress = document.getElementById('volume-control');
+    const barProgress = document.getElementByid('volume-control');
     this.setState({
       volumeValue: barProgress.value,
       default: this.state.volumeValue
@@ -399,7 +146,7 @@ class App extends Component {
 
             <div id="display">
               <div id="display-inside">
-                <p>{this.state.default}</p>
+                <p>{this.state.sound == null ? "" : this.state.sound.id}</p>
               </div>
             </div>
 
@@ -445,60 +192,72 @@ class App extends Component {
             <div className="main-pad">
 
               <div id="pad-container">
+                {bankA.map((item, index) => {
+                  //  console.log(item.key)
+                  return (
+                    <div className="drum-pad"
+                      key={index}
+                      id={item.id}
+                      onClick={() => this.handleClick(index)} >
+                        <audio className="clip" id={item.key} src={item.src} /> 
+                        {item.key} 
+                        </div>
+                      );
+                      })}
 
-                <div data-key="keyQ" onClick={this.playSound} className="drum-pad" id="Apple">
-                  <audio data-key="65" src={apple} className="clip" id="Q" type="audio/mp3" />
-                  {/* <audio data-key="65" src={boneBreaking} className="clip" id="Qb" type="audio/mp3" /> */}
+                      {/* <div data-key="keyQ" onClick={this.playSound} className="drum-pad" id="Apple">
+                        <audio data-key="65" src={apple} className="clip" id="Q" type="audio/mp3" />
+                        <audio data-key="65" src={boneBreaking} className="clip" id="Qb" type="audio/mp3" />
                                Q
                             </div>
-                <div data-key="keyW" onClick={this.playSound} className="drum-pad" id="ShortCircuit">
-                  <audio data-key="87" src={shortCircuit} className="clip" id="W" type="audio/mp3" />
-                  {/* <audio data-key="87" src={aMajor} className="clip" id="Wb" type="audio/mp3" /> */}
+                      <div data-key="keyW" onClick={this.playSound} className="drum-pad" id="ShortCircuit">
+                        <audio data-key="87" src={shortCircuit} className="clip" id="W" type="audio/mp3" />
+                        <audio data-key="87" src={aMajor} className="clip" id="Wb" type="audio/mp3" />
                                 W
                             </div>
-                <div data-key="keyE" onClick={this.playSound} className="drum-pad" id="WaterBalloon">
-                  <audio data-key="87" src={waterBalloon} className="clip" id="E" />
-                  {/* <audio data-key="87" src={dminor} className="clip" id="Eb" /> */}
+                      <div data-key="keyE" onClick={this.playSound} className="drum-pad" id="WaterBalloon">
+                        <audio data-key="87" src={waterBalloon} className="clip" id="E" />
+                        <audio data-key="87" src={dminor} className="clip" id="Eb" />
                                 E
                             </div>
-                <div data-key="keyA" onClick={this.playSound} className="drum-pad" id="FireBow">
-                  <audio data-key="87" src={fireBow} className="clip" id="A" />
-                  {/* <audio data-key="87" src={fsound} className="clip" id="Ab" /> */}
+                      <div data-key="keyA" onClick={this.playSound} className="drum-pad" id="FireBow">
+                        <audio data-key="87" src={fireBow} className="clip" id="A" />
+                        <audio data-key="87" src={fsound} className="clip" id="Ab" />
                                 A
                             </div>
-                <div data-key="keyS" onClick={this.playSound} className="drum-pad" id="LightSwith">
-                  <audio data-key="87" src={lightSwith} className="clip" id="S" />
-                  {/* <audio data-key="87" src={dmajor} className="clip" id="Sb" /> */}
+                      <div data-key="keyS" onClick={this.playSound} className="drum-pad" id="LightSwith">
+                        <audio data-key="87" src={lightSwith} className="clip" id="S" />
+                        <audio data-key="87" src={dmajor} className="clip" id="Sb" />
                                 S
                             </div>
-                <div data-key="keyD" onClick={this.playSound} className="drum-pad" id="Marbles">
-                  <audio data-key="87" src={marbles} className="clip" id="D" />
-                  {/* <audio data-key="87" src={charley} className="clip" id="Db" /> */}
+                      <div data-key="keyD" onClick={this.playSound} className="drum-pad" id="Marbles">
+                        <audio data-key="87" src={marbles} className="clip" id="D" />
+                        <audio data-key="87" src={charley} className="clip" id="Db" />
                                 D
                             </div>
-                <div data-key="keyZ" onClick={this.playSound} className="drum-pad" id="NeckSnap">
-                  <audio data-key="87" src={neckSnap} className="clip" id="Z" />
-                  {/* <audio data-key="87" src={charleyOpen} className="clip" id="Zb" /> */}
+                      <div data-key="keyZ" onClick={this.playSound} className="drum-pad" id="NeckSnap">
+                        <audio data-key="87" src={neckSnap} className="clip" id="Z" />
+                        <audio data-key="87" src={charleyOpen} className="clip" id="Zb" />
                                 Z
                             </div>
-                <div data-key="keyX" onClick={this.playSound} className="drum-pad" id="PinDropping">
-                  <audio data-key="87" src={pinDropping} className="clip" id="X" />
-                  {/* <audio data-key="87" src={kick} className="clip" id="Xb" /> */}
+                      <div data-key="keyX" onClick={this.playSound} className="drum-pad" id="PinDropping">
+                        <audio data-key="87" src={pinDropping} className="clip" id="X" />
+                        <audio data-key="87" src={kick} className="clip" id="Xb" />
                                 X
                             </div>
-                <div data-key="keyC" onClick={this.playSound} className="drum-pad" id="StringTension">
-                  <audio data-key="87" src={stringTension} className="clip" id="C" />
-                  {/* <audio data-key="87" src={snare} className="clip" id="Cb" /> */}
+                      <div data-key="keyC" onClick={this.playSound} className="drum-pad" id="StringTension">
+                        <audio data-key="87" src={stringTension} className="clip" id="C" />
+                        <audio data-key="87" src={snare} className="clip" id="Cb" />
                                 C
-                            </div>
-              </div>
+                            </div> */}
+                    </div>
             </div>
 
+            </div>
+
+
           </div>
-
-
         </div>
-      </div>
     )
   }
 };
