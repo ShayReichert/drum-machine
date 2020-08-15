@@ -1,75 +1,72 @@
 import React, { Component } from 'react';
 import './App.scss';
 
-
-// kick 2 : https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Kicks/152[kb]bigcheeks-kick.wav.mp3
-// Snare 2 : https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Snares/51[kb]ec-sn016.wav.mp3
-// Clap 2 : https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Claps/86[kb]cleap-real-2-verb2cleap-real.wav.mp3 
-// Hit Hat 2 : https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/23[kb]chh808.aif.mp3
-// Clic 2 : https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Tabla/24[kb]ti-ri.aif.mp3
-// Melodic 2 A : https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/299[kb]one-gentle-epiano-hit.wav.mp3
-// Melodic 2 B : https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/356[kb]one-staggered-epiano-chord-2.wav.mp3
-// Melodic 2 C : https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/274[kb]one-staggered-epiano-chord.wav.mp3 
-// TrumpThatTrue : https://sampleswap.org/samples-ghost/VOCALS%20and%20SPOKEN%20WORD/Donald%20Trump%20Construction%20Kit/252[kb]trump-thats-true.wav.mp3 
-
+// allSounds
 const bankA = [
   {
     keyCode: 81,
     key: "Q",
     id: "Kick",
-    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Kicks/53[kb]ec-kik007.wav.mp3"
+    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Kicks/53[kb]ec-kik007.wav.mp3",
+    src2: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Kicks/152[kb]bigcheeks-kick.wav.mp3"
   },
   {
     keyCode: 87,
     key: "W",
     id: "Snare",
-    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Snares/61[kb]ec-sn022.wav.mp3"
+    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Snares/61[kb]ec-sn022.wav.mp3",
+    src2: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Snares/51[kb]ec-sn016.wav.mp3"
   },
   {
     keyCode: 69,
     key: "E",
     id: "Clap",
-    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Claps/102[kb]c5.aif.mp3"
+    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Claps/102[kb]c5.aif.mp3",
+    src2: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Claps/86[kb]cleap-real-2-verb2cleap-real.wav.mp3"
   },
   {
     keyCode: 65,
     key: "A",
     id: "Hit Hat",
-    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/9[kb]ec-hat024.wav.mp3"
+    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/9[kb]ec-hat024.wav.mp3",
+    src2: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/23[kb]chh808.aif.mp3"
   },
   {
     keyCode: 83,
     key: "S",
     id: "Clic",
-    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Tabla/24[kb]ti-ri.aif.mp3"
+    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Tabla/24[kb]ti-ri.aif.mp3",
+    src2: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Tabla/24[kb]ti-ri.aif.mp3"
   },
   {
     keyCode: 68,
     key: "D",
     id: "Melodic01",
-    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/1166[kb]stab-satisfying-4.wav.mp3"
+    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/1166[kb]stab-satisfying-4.wav.mp3",
+    src2: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/299[kb]one-gentle-epiano-hit.wav.mp3"
   },
   {
     keyCode: 90,
     key: "Z",
     id: "Melodic02",
-    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/1166[kb]stab-satisfying-12.wav.mp3"
+    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/1166[kb]stab-satisfying-12.wav.mp3",
+    src2: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/356[kb]one-staggered-epiano-chord-2.wav.mp3"
   },
   {
     keyCode: 88,
     key: "X",
     id: "Melodic03",
-    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/1166[kb]stab-satisfying-1.wav.mp3"
+    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/1166[kb]stab-satisfying-1.wav.mp3",
+    src2: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/274[kb]one-staggered-epiano-chord.wav.mp3"
   },
   {
     keyCode: 67,
     key: "C",
     id: "Melodic04",
-    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/1166[kb]stab-satisfying-10.wav.mp3"
+    src: "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/1166[kb]stab-satisfying-10.wav.mp3",
+    src2: "https://sampleswap.org/samples-ghost/VOCALS%20and%20SPOKEN%20WORD/Donald%20Trump%20Construction%20Kit/252[kb]trump-thats-true.wav.mp3"
   }
 ]
-
-
 
 class App extends Component {
   constructor(props) {
@@ -78,25 +75,19 @@ class App extends Component {
     this.state = {
       sound: {},
       id: '',
-      volumeValue: "50"
+      volumeValue: "50",
+      bankBGreen: false
     };
   }
 
-  // poubelle, trucs à récupérer peut-être ? 
-  // const bankLightB = document.getElementByid('b-light');
-  // if (bankLightB.classList.contains('bank-b')
-  // switch (e.currentTarget.childNodes[1].id) 
-
+  //handleOnClicked
   playSound = (soundKey) => {
-    console.log(soundKey);
     const sound = document.getElementById(soundKey);
     sound.currentTime = 0;
     sound.play();
 
   }
-
   handleClick = index => {
-    // console.log(this, bankA[index]);
     this.setState({
       ...this.state,
       sound: bankA[index],
@@ -106,23 +97,35 @@ class App extends Component {
     this.playSound(soundKey);
   };
 
-  // OnKeyDown, play sound
-  // keyPressed = (e) => {
-
-  // }
-
+  // handleOnKeyDown
   componentDidMount() {
     document.addEventListener("keydown", this.keyPressed, false)
   }
   componentWillUnmount() {
     document.removeEventListener("keydown", this.keyPressed, false)
   }
+  keyPressed = (e) => {
+    bankA.map(keySound => {
+      if (keySound.keyCode === e.keyCode) {
+        this.setState({
+          ...this.state,
+          sound: keySound,
+          id: keySound.id
+        })
+        let soundId = this.state.sound.key
+        this.playSound(soundId)
+      }
+      return keySound
+    })
+  }
 
+  // handleFeatures
   changeBank = () => {
-    const bankLightA = document.getElementByid('a-light');
-    const bankLightB = document.getElementByid('b-light');
-    bankLightA.classList.toggle('bank-a');
-    bankLightB.classList.toggle('bank-b');
+    document.getElementById('a-light').classList.toggle('bank-a');
+    document.getElementById('b-light').classList.toggle('bank-b');
+    this.setState({
+      bankBGreen: !this.state.bankBGreen
+    })
   }
   changeVolume = () => {
     const barProgress = document.getElementByid('volume-control');
@@ -192,72 +195,34 @@ class App extends Component {
             <div className="main-pad">
 
               <div id="pad-container">
+
                 {bankA.map((item, index) => {
-                  //  console.log(item.key)
+                  // changed bank sounds (when Pad Bank clicked)
+                  const srcAudio = this.state.bankBGreen ?
+                    (<audio className="clip" id={item.key} src={item.src2} />)
+                    : (<audio className="clip" id={item.key} src={item.src} />)
+
                   return (
                     <div className="drum-pad"
                       key={index}
                       id={item.id}
                       onClick={() => this.handleClick(index)} >
-                        <audio className="clip" id={item.key} src={item.src} /> 
-                        {item.key} 
-                        </div>
-                      );
-                      })}
-
-                      {/* <div data-key="keyQ" onClick={this.playSound} className="drum-pad" id="Apple">
-                        <audio data-key="65" src={apple} className="clip" id="Q" type="audio/mp3" />
-                        <audio data-key="65" src={boneBreaking} className="clip" id="Qb" type="audio/mp3" />
-                               Q
-                            </div>
-                      <div data-key="keyW" onClick={this.playSound} className="drum-pad" id="ShortCircuit">
-                        <audio data-key="87" src={shortCircuit} className="clip" id="W" type="audio/mp3" />
-                        <audio data-key="87" src={aMajor} className="clip" id="Wb" type="audio/mp3" />
-                                W
-                            </div>
-                      <div data-key="keyE" onClick={this.playSound} className="drum-pad" id="WaterBalloon">
-                        <audio data-key="87" src={waterBalloon} className="clip" id="E" />
-                        <audio data-key="87" src={dminor} className="clip" id="Eb" />
-                                E
-                            </div>
-                      <div data-key="keyA" onClick={this.playSound} className="drum-pad" id="FireBow">
-                        <audio data-key="87" src={fireBow} className="clip" id="A" />
-                        <audio data-key="87" src={fsound} className="clip" id="Ab" />
-                                A
-                            </div>
-                      <div data-key="keyS" onClick={this.playSound} className="drum-pad" id="LightSwith">
-                        <audio data-key="87" src={lightSwith} className="clip" id="S" />
-                        <audio data-key="87" src={dmajor} className="clip" id="Sb" />
-                                S
-                            </div>
-                      <div data-key="keyD" onClick={this.playSound} className="drum-pad" id="Marbles">
-                        <audio data-key="87" src={marbles} className="clip" id="D" />
-                        <audio data-key="87" src={charley} className="clip" id="Db" />
-                                D
-                            </div>
-                      <div data-key="keyZ" onClick={this.playSound} className="drum-pad" id="NeckSnap">
-                        <audio data-key="87" src={neckSnap} className="clip" id="Z" />
-                        <audio data-key="87" src={charleyOpen} className="clip" id="Zb" />
-                                Z
-                            </div>
-                      <div data-key="keyX" onClick={this.playSound} className="drum-pad" id="PinDropping">
-                        <audio data-key="87" src={pinDropping} className="clip" id="X" />
-                        <audio data-key="87" src={kick} className="clip" id="Xb" />
-                                X
-                            </div>
-                      <div data-key="keyC" onClick={this.playSound} className="drum-pad" id="StringTension">
-                        <audio data-key="87" src={stringTension} className="clip" id="C" />
-                        <audio data-key="87" src={snare} className="clip" id="Cb" />
-                                C
-                            </div> */}
+                      {srcAudio}
+                      {item.key}
                     </div>
-            </div>
+                  );
+
+                })}
+
+              </div>
 
             </div>
-
 
           </div>
+
+
         </div>
+      </div>
     )
   }
 };
