@@ -1,40 +1,22 @@
 {
   "files": {
     "main.css": "/drum-machine/static/css/main.a091cb79.chunk.css",
-    "main.js": "/drum-machine/static/js/main.52a43421.chunk.js",
-    "main.js.map": "/drum-machine/static/js/main.52a43421.chunk.js.map",
+    "main.js": "/drum-machine/static/js/main.bd9e7d19.chunk.js",
+    "main.js.map": "/drum-machine/static/js/main.bd9e7d19.chunk.js.map",
     "runtime-main.js": "/drum-machine/static/js/runtime-main.49a0ba3c.js",
     "runtime-main.js.map": "/drum-machine/static/js/runtime-main.49a0ba3c.js.map",
-    "static/js/2.4fa3396d.chunk.js": "/drum-machine/static/js/2.4fa3396d.chunk.js",
-    "static/js/2.4fa3396d.chunk.js.map": "/drum-machine/static/js/2.4fa3396d.chunk.js.map",
+    "static/js/2.4e366767.chunk.js": "/drum-machine/static/js/2.4e366767.chunk.js",
+    "static/js/2.4e366767.chunk.js.map": "/drum-machine/static/js/2.4e366767.chunk.js.map",
     "index.html": "/drum-machine/index.html",
-    "precache-manifest.b359882b89cc10fa938dcb2da4cd807a.js": "/drum-machine/precache-manifest.b359882b89cc10fa938dcb2da4cd807a.js",
+    "precache-manifest.0f55d41ff34d168fbd1fc937b4de6968.js": "/drum-machine/precache-manifest.0f55d41ff34d168fbd1fc937b4de6968.js",
     "service-worker.js": "/drum-machine/service-worker.js",
     "static/css/main.a091cb79.chunk.css.map": "/drum-machine/static/css/main.a091cb79.chunk.css.map",
-    "static/js/2.4fa3396d.chunk.js.LICENSE.txt": "/drum-machine/static/js/2.4fa3396d.chunk.js.LICENSE.txt",
-    "static/media/8080Dmajor.mp3": "/drum-machine/static/media/8080Dmajor.d198edc7.mp3",
-    "static/media/808AMajor.mp3": "/drum-machine/static/media/808AMajor.010e8032.mp3",
-    "static/media/808Dminor.mp3": "/drum-machine/static/media/808Dminor.671f9e5e.mp3",
-    "static/media/808F.mp3": "/drum-machine/static/media/808F.55bb7cbe.mp3",
-    "static/media/BoneBreaking.mp3": "/drum-machine/static/media/BoneBreaking.abda2808.mp3",
-    "static/media/apple.mp3": "/drum-machine/static/media/apple.437e4b92.mp3",
-    "static/media/charley01.mp3": "/drum-machine/static/media/charley01.c6445583.mp3",
-    "static/media/charleyOpen01.mp3": "/drum-machine/static/media/charleyOpen01.cdb0bbe1.mp3",
-    "static/media/fireBow.mp3": "/drum-machine/static/media/fireBow.eebe4570.mp3",
-    "static/media/kick01.mp3": "/drum-machine/static/media/kick01.3a73aace.mp3",
-    "static/media/lightSwith.mp3": "/drum-machine/static/media/lightSwith.462f8ffd.mp3",
-    "static/media/marbles.mp3": "/drum-machine/static/media/marbles.15425b81.mp3",
-    "static/media/neckSnap.mp3": "/drum-machine/static/media/neckSnap.bd1c52ae.mp3",
-    "static/media/pinDropping.mp3": "/drum-machine/static/media/pinDropping.3a254e16.mp3",
-    "static/media/shortCircuit.mp3": "/drum-machine/static/media/shortCircuit.f4b95df9.mp3",
-    "static/media/snare01.mp3": "/drum-machine/static/media/snare01.6b0b1cb4.mp3",
-    "static/media/stringTension.mp3": "/drum-machine/static/media/stringTension.7bbdc8cf.mp3",
-    "static/media/waterBalloon.mp3": "/drum-machine/static/media/waterBalloon.48372504.mp3"
+    "static/js/2.4e366767.chunk.js.LICENSE.txt": "/drum-machine/static/js/2.4e366767.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.49a0ba3c.js",
-    "static/js/2.4fa3396d.chunk.js",
+    "static/js/2.4e366767.chunk.js",
     "static/css/main.a091cb79.chunk.css",
-    "static/js/main.52a43421.chunk.js"
+    "static/js/main.bd9e7d19.chunk.js"
   ]
 }
