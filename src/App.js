@@ -76,6 +76,7 @@ class App extends Component {
       sound: {},
       id: '',
       volumeValue: "50",
+      default: '',
       bankBGreen: false
     };
   }
@@ -83,6 +84,10 @@ class App extends Component {
   //handleOnClicked
   playSound = (soundKey) => {
     const sound = document.getElementById(soundKey);
+    sound.volume = this.state.volumeValue / 100;
+    this.setState({
+      default: this.state.sound.id
+    })
     sound.currentTime = 0;
     sound.play();
 
@@ -128,7 +133,7 @@ class App extends Component {
     })
   }
   changeVolume = () => {
-    const barProgress = document.getElementByid('volume-control');
+    const barProgress = document.getElementById('volume-control');
     this.setState({
       volumeValue: barProgress.value,
       default: this.state.volumeValue
@@ -149,7 +154,9 @@ class App extends Component {
 
             <div id="display">
               <div id="display-inside">
-                <p>{this.state.sound == null ? "" : this.state.sound.id}</p>
+                <p>
+                  {this.state.default}             
+                </p>
               </div>
             </div>
 
